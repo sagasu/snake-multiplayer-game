@@ -21,3 +21,5 @@ function init(){
 function keydown(e){
     console.log(e.keydown);
 }
+
+init();
