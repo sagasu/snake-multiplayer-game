@@ -1,7 +1,8 @@
 const {GRID_SIZE} = require('./constants');
 
 module.exports = {
-    createGameState
+    createGameState,
+    gameLoop,
 }
 
 function createGameState() {
@@ -27,4 +28,19 @@ function createGameState() {
         },
         gridsize: GRID_SIZE,
     };
+}
+
+function gameLoop(state){
+    if(!state){
+        return;
+    }
+
+    const playerOne = state.player;
+
+    playerOne.pos.x += playerOne.vel.x;
+    playerOne.pos.y += playerOne.vel.y;
+
+    if(playerOne.pos.x < 0 || playerOne.pos.x > GRID_SIZE || playerOne.pos.y < 0 || playerOne.pos.y > GRID_SIZE){
+        return 2;
+    }
 }
