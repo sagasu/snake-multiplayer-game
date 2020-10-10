@@ -5,7 +5,7 @@ const FOOD_COLOUR = '#e66916';
 const socket = io('http://localhost:3000');
 
 socket.on('init', handleInit);
-socket.on('gamestate', handleGameState);
+socket.on('gameState', handleGameState);
 
 const gameScreen = document.getElementById('gameScreen');
 
